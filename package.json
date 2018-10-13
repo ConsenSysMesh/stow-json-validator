@@ -1,0 +1,39 @@
+{
+  "name": "linnia-json-validator",
+  "version": "0.0.1",
+  "private": true,
+  "description": "validate json and reports to ropsten testnet oracle contract",
+  "main": "handler.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ConsenSys/linnia-json-validator.git"
+  },
+  "keywords": [
+    "linnia",
+    "ethereum",
+    "smart",
+    "contracts",
+    "oracle"
+  ],
+  "author": "godfrey hobbs",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ConsenSys/linnia-json-validator/issues"
+  },
+  "homepage": "https://github.com/ConsenSys/linnia-json-validator#readme",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "ethereumjs-util": "^5.2.0",
+    "ganache-cli": "^6.1.8",
+    "truffle-contract": "^3.0.6",
+    "truffle-hdwallet-provider": "git+https://github.com/vrotmanh/truffle-hdwallet-provider",
+    "web3": "^1.0.0-beta.36",
+    "web3-eth-accounts": "^1.0.0-beta.36"
+  },
+  "devDependencies": {
+    "serverless-offline": "^3.27.0"
+  }
+}
