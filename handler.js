@@ -4,7 +4,8 @@ const updateContract = require('./updateContract');
 
 module.exports.validateJSON = (event, context, callback) => {
 
-  //TODO: integrate updateContract
+  //TODO: validate that the JSON matches what is on-chain for the given datahash
+  //TODO: consider reading JSON or metadata hash from on-chain data this require contract addess and abi
   let response = {
     statusCode: 400,
     headers: {'Content-Type': 'text/plain'},
