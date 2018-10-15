@@ -9,14 +9,13 @@ const provider_host = process.env.ETH_PROVIDER;
 const contractAddr = process.env.CONTRACT_ADDRESS;
 
 let web3;
-// If ropsten
-
 const provider = hdwallet.networks[provider_host].provider();
 web3 = new Web3(provider.engine);
 
 module.exports.update = function (dataHash, newValue) {
 
   async function script(err, accounts) {
+    console.log('using dataHash [' + dataHash + '] and Newvalue [' + newValue + ']');
     const tempContract = TruffleContract(IrisScoreJSONProvider);
     tempContract.setProvider(web3.currentProvider)
     const instance = await tempContract.at(contractAddr);
@@ -32,10 +31,11 @@ module.exports.update = function (dataHash, newValue) {
            gas: '200000',
            gasPrice: '200000000000'
          });
+
       console.log(JSON.stringify(tx));
 
       result = await instance.report.call(dataHash);
-      console.log('previous value for [' + dataHash + '] is [' + web3.utils.hexToNumber(result) + ']');
+      console.log('new value for [' + dataHash + '] is [' + web3.utils.hexToNumber(result) + ']');
     } catch (err) {
       console.log(err);
     }

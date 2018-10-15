@@ -25,13 +25,17 @@
   },
   "homepage": "https://github.com/ConsenSys/linnia-json-validator#readme",
   "dependencies": {
+    "bignumber.js": "^7.2.1",
     "dotenv": "^6.0.0",
     "ethereumjs-util": "^5.2.0",
     "ganache-cli": "^6.1.8",
     "truffle-contract": "^3.0.6",
-    "truffle-hdwallet-provider": "git+https://github.com/vrotmanh/truffle-hdwallet-provider",
+    "truffle-hdwallet-provider": "git+https://github.com/vrotmanh/truffle-hdwallet-provider.git",
+    "utf8": "^3.0.0",
     "web3": "^1.0.0-beta.36",
-    "web3-eth-accounts": "^1.0.0-beta.36"
+    "web3-eth-accounts": "^1.0.0-beta.36",
+    "xhr2": "^0.1.4",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "serverless-offline": "^3.27.0"

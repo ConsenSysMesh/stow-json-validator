@@ -1,6 +1,6 @@
 'use strict';
 
-const updateContract = require('./updateContract');
+const updateContract = require('./updateContract.js');
 
 module.exports.validateJSON = (event, context, callback) => {
 
@@ -13,12 +13,13 @@ module.exports.validateJSON = (event, context, callback) => {
   };
   console.log('parameters [' + JSON.stringify(event.queryStringParameters) + ']');
   console.log(JSON.stringify(event));
-  if (event.queryStringParameters.json) {
+
+  if (event.body) {
     //Validate
     try {
-      console.log('parsing [' + JSON.stringify(event.queryStringParameters.json) + ']');
+      console.log('parsing [' + JSON.stringify(event.body) + ']');
 
-      JSON.parse(event.queryStringParameters.json);
+      JSON.parse(event.body);
 
       updateContract.update(event.queryStringParameters.dataHash,'1');
 

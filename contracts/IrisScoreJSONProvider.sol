@@ -21,7 +21,7 @@ contract IrisScoreJSONProvider is IrisScoreProviderI{
     mapping(bytes32 => uint256) public scores;
 
     function report(bytes32 dataHash) public view returns (uint256) {
-        require(dataHash != 0);
+        require(dataHash != bytes32(0));
         uint256 result = scores[dataHash];
         require(result > 0);
         return result;
