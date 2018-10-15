@@ -1,6 +1,6 @@
 pragma solidity 0.4.24;
 
-
+//TODO: use linnia SC json
 contract IrisScoreProviderI {
 
     /// report the IRIS score for the dasaHash records
