@@ -4,15 +4,19 @@ const hdwallet = require('./truffle');
 const TruffleContract = require('truffle-contract');
 const IrisScoreJSONProvider = require('./build/contracts/IrisScoreJSONProvider.json');
 
-const provider_host = process.env.ETH_PROVIDER;
 const contractAddr = process.env.CONTRACT_ADDRESS;
 
 let web3;
-const provider = hdwallet.networks[provider_host].provider();
+const provider = hdwallet.networks[process.env.ETH_PROVIDER].provider();
 web3 = new Web3(provider.engine);
 
 module.exports.update = function (dataHash, newValue) {
   async function script (err, accounts) {
+    if (err) {
+      console.log(err.stack);
+      return;
+    }
+
     console.log('using dataHash [' + dataHash + '] and Newvalue [' + newValue + ']');
     const tempContract = TruffleContract(IrisScoreJSONProvider);
     tempContract.setProvider(web3.currentProvider)
