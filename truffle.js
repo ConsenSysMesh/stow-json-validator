@@ -7,15 +7,15 @@ const privKeys = [privateKey.toLowerCase()];
 module.exports = {
   networks: {
     ropsten: {
-      provider() {
+      provider () {
         return new HDWalletProvider(
-           privKeys,
-           `https://ropsten.infura.io/${process.env.LINNIA_ETH_INFURA_ROPSTEN_KEY}`,
+          privKeys,
+          `https://ropsten.infura.io/${process.env.LINNIA_ETH_INFURA_ROPSTEN_KEY}`
         );
       },
       network_id: 3,
       gas: 5000000,
-      gasPrice: 10000000000,
-    },
-  },
+      gasPrice: 10000000000
+    }
+  }
 };
