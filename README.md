@@ -1,4 +1,4 @@
-# linnia-json-validator
+# stow-json-validator
 
 #endpoints:
 
